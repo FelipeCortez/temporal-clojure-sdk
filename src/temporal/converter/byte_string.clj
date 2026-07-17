@@ -1,6 +1,6 @@
 (ns temporal.converter.byte-string
   (:import
-   [io.temporal.shaded.com.google.protobuf ByteString]
+   [com.google.protobuf ByteString]
    [java.nio.charset StandardCharsets]))
 
 (defprotocol ToByteString

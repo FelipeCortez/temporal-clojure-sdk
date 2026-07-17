@@ -9,7 +9,7 @@
   (:import [io.temporal.api.common.v1 Payload]
            [io.temporal.common.converter CodecDataConverter]
            [io.temporal.payload.codec PayloadCodec]
-           [io.temporal.shaded.com.google.protobuf ByteString]
+           [com.google.protobuf ByteString]
            [java.util Collections]))
 
 (defprotocol Codec

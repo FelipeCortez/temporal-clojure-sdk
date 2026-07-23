@@ -9,8 +9,11 @@
   (:import [io.temporal.common.interceptors WorkerInterceptor]
            [io.temporal.worker Worker WorkerFactory WorkerFactoryOptions WorkerFactoryOptions$Builder WorkerOptions WorkerOptions$Builder WorkerPlugin]
            [io.temporal.worker.tuning PollerBehavior PollerBehaviorAutoscaling]
-           [io.temporal.workflow DynamicWorkflow]
-           [temporal.internal.dispatcher DynamicWorkflowProxy]))
+           [io.temporal.workflow DynamicWorkflow]))
+
+(deftype DynamicWorkflowProxy [backend]
+  DynamicWorkflow
+  (execute [_this args] (.execute backend args)))
 
 (defn ^:no-doc init
   "
